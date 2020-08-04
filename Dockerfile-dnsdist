@@ -21,7 +21,7 @@ WORKDIR /source/pdns/dnsdistdist
 ARG MAKEFLAGS=
 ENV MAKEFLAGS ${MAKEFLAGS:--j2}
 
-#RUN touch pdns_recursor.1 rec_control.1 # avoid installing pandoc
+RUN touch dnsdist.1 # avoid having to install pandoc and venv
 
 RUN autoreconf -vfi
 
