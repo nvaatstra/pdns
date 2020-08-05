@@ -67,7 +67,7 @@ COPY --from=builder /source/dockerdata/recursor.conf /etc/powerdns/
 RUN mkdir -p /etc/powerdns/recursor.d /var/run/pdns-recursor
 
 # Work with pdns user - not root
-RUN adduser --system --disabled-password --disabled-login --no-create-home --group pdns
+RUN adduser --system --disabled-password --disabled-login --no-create-home --group pdns --uid 953
 RUN chown pdns:pdns /var/run/pdns-recursor
 USER pdns
 
